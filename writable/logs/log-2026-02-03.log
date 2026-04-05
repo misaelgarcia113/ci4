@@ -1,0 +1,86 @@
+CRITICAL - 2026-02-03 15:36:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "account/login.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('account/login.php')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('account/login', [], true)
+ 3 APPPATH\Controllers\Auth.php(20): view('account/login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 15:37:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "account.login"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('account.login')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('account.login', [], true)
+ 3 APPPATH\Controllers\Auth.php(20): view('account.login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 15:37:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "account.login"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('account.login')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('account.login', [], true)
+ 3 APPPATH\Controllers\Auth.php(20): view('account.login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 15:37:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "accounts.login"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('accounts.login')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts.login', [], true)
+ 3 APPPATH\Controllers\Auth.php(20): view('accounts.login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 15:37:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "accounts.login"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('accounts.login')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts.login', [], true)
+ 3 APPPATH\Controllers\Auth.php(20): view('accounts.login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 15:38:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "accounts.login"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('accounts.login')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts.login', [], true)
+ 3 APPPATH\Controllers\Auth.php(20): view('accounts.login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 19:00:15 --> ErrorException: Undefined variable $url
+[Method: GET, Route: prueba]
+in APPPATH\Controllers\Prueba.php on line 17.
+ 1 APPPATH\Controllers\Prueba.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $url', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\Prueba.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Prueba->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prueba))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-03 22:18:07 --> ErrorException: Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+[Method: GET, Route: services/geolocation]
+in APPPATH\Controllers\Api.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

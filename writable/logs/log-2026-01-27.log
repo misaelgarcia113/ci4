@@ -1,0 +1,39 @@
+CRITICAL - 2026-01-27 21:36:32 --> ErrorException: file_get_contents(https://ipapi.co/8.8.8.8/json/): Failed to open stream: HTTP request failed! HTTP/1.1 429 Too Many Requests
+
+[Method: GET, Route: prueba]
+in APPPATH\Controllers\Prueba.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://ipapi.co/8.8.8.8/json/): Failed to open stream: HTTP request failed! HTTP/1.1 429 Too Many Requests
+', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\Prueba.php', 9)
+ 2 APPPATH\Controllers\Prueba.php(9): file_get_contents('https://ipapi.co/8.8.8.8/json/')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Prueba->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prueba))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-27 21:40:03 --> ErrorException: file_get_contents(https://ipapi.co/8.8.8.8/json/): Failed to open stream: HTTP request failed! HTTP/1.1 429 Too Many Requests
+
+[Method: GET, Route: prueba]
+in APPPATH\Controllers\Prueba.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://ipapi.co/8.8.8.8/json/): Failed to open stream: HTTP request failed! HTTP/1.1 429 Too Many Requests
+', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\Prueba.php', 9)
+ 2 APPPATH\Controllers\Prueba.php(9): file_get_contents('https://ipapi.co/8.8.8.8/json/')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Prueba->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prueba))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-27 21:42:19 --> ErrorException: file_get_contents(https://ipapi.co/8.8.8.8/json/): Failed to open stream: HTTP request failed! HTTP/1.1 429 Too Many Requests
+
+[Method: GET, Route: prueba]
+in APPPATH\Controllers\Prueba.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://ipapi.co/8.8.8.8/json/): Failed to open stream: HTTP request failed! HTTP/1.1 429 Too Many Requests
+', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\Prueba.php', 9)
+ 2 APPPATH\Controllers\Prueba.php(9): file_get_contents('https://ipapi.co/8.8.8.8/json/')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Prueba->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Prueba))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -1,0 +1,113 @@
+CRITICAL - 2026-02-04 00:50:18 --> ErrorException: Undefined variable $json
+[Method: GET, Route: services/geolocation]
+in APPPATH\Controllers\Api.php on line 22.
+ 1 APPPATH\Controllers\Api.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $json', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\Api.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Api->geolocation()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 03:07:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/header_loyout.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/header_loyout.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('layouts/header_loyout', [], true)
+ 3 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 4 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 03:08:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/header_layout.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/header_layout.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('layouts/header_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 4 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 03:08:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/header_layout.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/header_layout.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('layouts/header_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 4 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 03:31:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/logok_layout.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/logok_layout.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/logok_layout', null, true)
+ 3 APPPATH\Views\accounts\login.php(9): CodeIgniter\View\View->include('layouts/logok_layout')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ci4\\app\\Views\\accounts\\login.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 7 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 16:05:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/logo_layout2.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/logo_layout2.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/logo_layout2', null, true)
+ 3 APPPATH\Views\accounts\login.php(9): CodeIgniter\View\View->include('layouts/logo_layout2')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ci4\\app\\Views\\accounts\\login.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 7 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 17:17:39 --> TypeError: CodeIgniter\HTTP\SiteURI::stringifyRelativePath(): Return value must be of type string, bool returned
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\HTTP\SiteURI.php on line 419.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(393): CodeIgniter\HTTP\SiteURI->stringifyRelativePath(false)
+ 2 SYSTEMPATH\Helpers\url_helper.php(59): CodeIgniter\HTTP\SiteURI->baseUrl(false, null)
+ 3 APPPATH\Views\accounts\login.php(29): base_url(false)
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ci4\\app\\Views\\accounts\\login.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 7 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-04 17:17:41 --> TypeError: CodeIgniter\HTTP\SiteURI::stringifyRelativePath(): Return value must be of type string, bool returned
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\HTTP\SiteURI.php on line 419.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(393): CodeIgniter\HTTP\SiteURI->stringifyRelativePath(false)
+ 2 SYSTEMPATH\Helpers\url_helper.php(59): CodeIgniter\HTTP\SiteURI->baseUrl(false, null)
+ 3 APPPATH\Views\accounts\login.php(29): base_url(false)
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ci4\\app\\Views\\accounts\\login.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('accounts/login', [], true)
+ 7 APPPATH\Controllers\Auth.php(20): view('accounts/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginForm()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
