@@ -1,26 +1,13 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
  
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    zip \
-    unzip \
-    && docker-php-ext-install mysqli pdo pdo_mysql zip \
-    && a2enmod rewrite \
-    && a2dismod mpm_event \
-    && a2enmod mpm_prefork
+RUN docker-php-ext-install mysqli pdo pdo_mysql
  
-COPY . /var/www/html/
+COPY . /app
  
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' \
-    /etc/apache2/sites-available/000-default.conf
+WORKDIR /app
  
-RUN echo '<Directory /var/www/html/public>\n\
-    Options Indexes FollowSymLinks\n\
-    AllowOverride All\n\
-    Require all granted\n\
-</Directory>' >> /etc/apache2/sites-available/000-default.conf
+RUN chmod -R 755 /app/writable
  
-RUN chown -R www-data:www-data /var/www/html/writable \
-    && chmod -R 755 /var/www/html/writable
+EXPOSE 8080
  
-EXPOSE 80
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
