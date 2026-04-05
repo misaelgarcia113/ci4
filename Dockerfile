@@ -11,7 +11,11 @@ COPY . /app
  
 WORKDIR /app
  
-RUN chmod -R 755 /app/writable
+RUN mkdir -p /app/writable/session \
+    && mkdir -p /app/writable/cache \
+    && mkdir -p /app/writable/logs \
+    && mkdir -p /app/writable/uploads \
+    && chmod -R 777 /app/writable
  
 EXPOSE 8080
  
