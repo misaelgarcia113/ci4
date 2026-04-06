@@ -191,14 +191,34 @@ class Database extends Config
     ];
 
     public function __construct()
-    {
-        parent::__construct();
+{
+    parent::__construct();
 
-        // Ensure that we always set the database group to 'tests' if
-        // we are currently running an automated test suite, so that
-        // we don't overwrite live data on accident.
-        if (ENVIRONMENT === 'testing') {
-            $this->defaultGroup = 'tests';
-        }
+    // Leer variables de entorno de Railway
+    $hostname = getenv('MYSQLHOST') ?: getenv('database.default.hostname');
+    $database = getenv('MYSQLDATABASE') ?: getenv('database.default.database');
+    $username = getenv('MYSQLUSER') ?: getenv('database.default.username');
+    $password = getenv('MYSQLPASSWORD') ?: getenv('database.default.password');
+    $port     = getenv('MYSQLPORT') ?: getenv('database.default.port');
+
+    if ($hostname) {
+        $this->default['hostname'] = $hostname;
     }
+    if ($database) {
+        $this->default['database'] = $database;
+    }
+    if ($username) {
+        $this->default['username'] = $username;
+    }
+    if ($password !== false) {
+        $this->default['password'] = $password;
+    }
+    if ($port) {
+        $this->default['port'] = (int) $port;
+    }
+
+    if (ENVIRONMENT === 'testing') {
+        $this->defaultGroup = 'tests';
+    }
+}
 }
