@@ -8,21 +8,18 @@ class Admin extends BaseController
     {
         $db = \Config\Database::connect();
  
-        // Obtener profesores (fk_level = 2)
         $profesores = $db->table('tbl_users u')
             ->select('u.pk_user, p.person, p.first_name, p.last_name')
             ->join('tbl_persons p', 'p.pk_phone = u.fk_phone')
             ->where('u.fk_level', 2)
             ->get()->getResultArray();
  
-        // Obtener alumnos (fk_level = 3)
         $alumnos = $db->table('tbl_users u')
             ->select('u.pk_user, p.person, p.first_name, p.last_name')
             ->join('tbl_persons p', 'p.pk_phone = u.fk_phone')
             ->where('u.fk_level', 3)
             ->get()->getResultArray();
  
-        // Obtener inscripciones existentes
         $inscripciones = $db->table('tbl_enrollment e')
             ->select('
                 e.pk_enrollment,
@@ -41,11 +38,11 @@ class Admin extends BaseController
             ->join('tbl_persons ta','ta.pk_phone = ua.fk_phone')
             ->get()->getResultArray();
  
-        // Obtener todos los usuarios con su nivel y datos personales
         $usuarios = $db->table('tbl_users u')
             ->select('
                 u.pk_user,
                 u.fk_phone,
+                u.fk_level,
                 u.locked,
                 u.created_at,
                 c.level,
@@ -59,7 +56,6 @@ class Admin extends BaseController
             ->orderBy('u.created_at', 'DESC')
             ->get()->getResultArray();
  
-        // Obtener niveles para el select del modal editar
         $niveles = $db->table('cat_levels')
             ->select('pk_level, level')
             ->get()->getResultArray();
@@ -73,9 +69,6 @@ class Admin extends BaseController
         ]);
     }
  
-    // ─── CRUD USUARIOS ───────────────────────────────────────
- 
-    // Obtener un usuario para editar vía Ajax
     public function getUser()
     {
         $db      = \Config\Database::connect();
@@ -87,6 +80,7 @@ class Admin extends BaseController
             ->where('u.pk_user', $pk_user)
             ->get()->getRowArray();
  
+        ob_clean();
         if ($user)
         {
             return $this->response->setJSON(['status' => '200', 'user' => $user]);
@@ -95,11 +89,10 @@ class Admin extends BaseController
         return $this->response->setJSON(['status' => '404', 'message' => 'Usuario no encontrado']);
     }
  
-    // Actualizar usuario vía Ajax
     public function updateUser()
     {
-        $db      = \Config\Database::connect();
-        $pk_user = $this->request->getPost('pk_user');
+        $db       = \Config\Database::connect();
+        $pk_user  = $this->request->getPost('pk_user');
         $fk_level = $this->request->getPost('fk_level');
         $locked   = $this->request->getPost('locked');
         $person   = strtoupper($this->request->getPost('person'));
@@ -107,15 +100,14 @@ class Admin extends BaseController
         $last     = strtoupper($this->request->getPost('last_name'));
         $telegram = $this->request->getPost('telegram_chat_id');
  
-        // Obtener fk_phone del usuario
         $user = $db->table('tbl_users')->where('pk_user', $pk_user)->get()->getRowArray();
  
         if (!$user)
         {
+            ob_clean();
             return $this->response->setJSON(['status' => '404', 'message' => 'Usuario no encontrado']);
         }
  
-        // Actualizar tbl_users
         $db->table('tbl_users')
             ->where('pk_user', $pk_user)
             ->update([
@@ -123,7 +115,6 @@ class Admin extends BaseController
                 'locked'   => $locked,
             ]);
  
-        // Actualizar tbl_persons
         $db->table('tbl_persons')
             ->where('pk_phone', $user['fk_phone'])
             ->update([
@@ -133,10 +124,10 @@ class Admin extends BaseController
                 'telegram_chat_id' => $telegram ?: null,
             ]);
  
+        ob_clean();
         return $this->response->setJSON(['status' => '200', 'message' => 'Usuario actualizado correctamente']);
     }
  
-    // Eliminar usuario vía Ajax
     public function deleteUser()
     {
         $db      = \Config\Database::connect();
@@ -146,25 +137,21 @@ class Admin extends BaseController
  
         if (!$user)
         {
+            ob_clean();
             return $this->response->setJSON(['status' => '404', 'message' => 'Usuario no encontrado']);
         }
  
-        // Eliminar inscripciones relacionadas
         $db->table('tbl_enrollment')
             ->where('fk_teacher_user', $pk_user)
             ->orWhere('fk_student_user', $pk_user)
             ->delete();
  
-        // Eliminar usuario
         $db->table('tbl_users')->where('pk_user', $pk_user)->delete();
- 
-        // Eliminar persona
         $db->table('tbl_persons')->where('pk_phone', $user['fk_phone'])->delete();
  
+        ob_clean();
         return $this->response->setJSON(['status' => '200', 'message' => 'Usuario eliminado correctamente']);
     }
- 
-    // ─── INSCRIPCIONES ───────────────────────────────────────
  
     public function createEnrollment()
     {
@@ -177,6 +164,7 @@ class Admin extends BaseController
  
         if (!$fk_teacher || !$fk_student || !$group_name || !$subject)
         {
+            ob_clean();
             return $this->response->setJSON(['status' => '400', 'message' => 'Todos los campos son obligatorios']);
         }
  
@@ -188,6 +176,7 @@ class Admin extends BaseController
  
         if ($existe > 0)
         {
+            ob_clean();
             return $this->response->setJSON(['status' => '409', 'message' => 'El alumno ya está inscrito en esa materia con ese profesor']);
         }
  
@@ -204,6 +193,7 @@ class Admin extends BaseController
         $db->table('tbl_enrollment')->insert($data);
         $pk = $db->insertID();
  
+        ob_clean();
         if ($pk)
         {
             return $this->response->setJSON(['status' => '200', 'message' => 'Inscripción creada correctamente', 'pk_enrollment' => $pk]);
@@ -219,11 +209,13 @@ class Admin extends BaseController
  
         if (!$pk)
         {
+            ob_clean();
             return $this->response->setJSON(['status' => '400', 'message' => 'ID de inscripción requerido']);
         }
  
         $db->table('tbl_enrollment')->where('pk_enrollment', $pk)->delete();
  
+        ob_clean();
         return $this->response->setJSON(['status' => '200', 'message' => 'Inscripción eliminada correctamente']);
     }
  
@@ -231,3 +223,4 @@ class Admin extends BaseController
     {
     }
 }
+ 
