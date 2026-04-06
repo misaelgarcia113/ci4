@@ -100,9 +100,9 @@
     </main>
  
     <!-- Scripts -->
-    <script src="<?= base_url('/public/js/jquery-3.7.0.min.js'); ?>"></script>
-    <script src="<?= base_url('/public/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?= base_url('/public/js/main.js'); ?>"></script>
+    <script src="<?= base_url('/js/jquery-3.7.0.min.js'); ?>"></script>
+    <script src="<?= base_url('/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?= base_url('/js/main.js'); ?>"></script>
     <script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
  
     <script>
