@@ -9,7 +9,6 @@ class Teacher extends BaseController
         $session = session();
         $db      = \Config\Database::connect();
  
-        // Obtener alumnos del profesor logueado
         $builder = $db->table('tbl_enrollment e');
         $builder->select('
             u.pk_user         as matricula,
@@ -23,8 +22,6 @@ class Teacher extends BaseController
         ');
         $builder->join('tbl_users u',   'u.pk_user  = e.fk_student_user');
         $builder->join('tbl_persons p', 'p.pk_phone = u.fk_phone');
- 
-        // Filtramos por el profesor logueado
         $builder->where('e.fk_teacher_user', $session->get('pk_user'));
  
         $data['alumnos'] = $builder->get()->getResultArray();
@@ -32,7 +29,6 @@ class Teacher extends BaseController
         return view('teacher/dashboard', $data);
     }
  
-    // Método para enviar mensaje al alumno vía Telegram (Ajax)
     public function sendMessage()
     {
         $session = session();
@@ -43,13 +39,13 @@ class Teacher extends BaseController
  
         if (!$pk_enrollment || !$mensaje)
         {
+            ob_clean();
             return $this->response->setJSON([
                 'status'  => '400',
                 'message' => 'Datos incompletos'
             ]);
         }
  
-        // Obtener datos del alumno y del enrollment
         $builder = $db->table('tbl_enrollment e');
         $builder->select('
             p.telegram_chat_id,
@@ -72,13 +68,13 @@ class Teacher extends BaseController
  
         if (!$enrollment)
         {
+            ob_clean();
             return $this->response->setJSON([
                 'status'  => '400',
                 'message' => 'Inscripción no encontrada'
             ]);
         }
  
-        // Construir el mensaje con fecha, hora, profesor y materia (requisito 6)
         $fecha    = date('d/m/Y');
         $hora     = date('H:i:s');
         $profesor = $enrollment['profesor_nombre'] . ' ' . 
@@ -93,12 +89,12 @@ class Teacher extends BaseController
                          "👥 Grupo: {$enrollment['group_name']}\n\n" .
                          "💬 Mensaje:\n{$mensaje}";
  
-        // Enviar a Telegram usando el helper
         helper('telegram');
         $resultado = enviarMensajeTelegram($enrollment['telegram_chat_id'], $textoTelegram);
  
         if ($resultado)
         {
+            ob_clean();
             return $this->response->setJSON([
                 'status'   => '200',
                 'message'  => 'Mensaje enviado correctamente',
@@ -111,6 +107,7 @@ class Teacher extends BaseController
         }
         else
         {
+            ob_clean();
             return $this->response->setJSON([
                 'status'  => '500',
                 'message' => 'Error al enviar mensaje a Telegram'
@@ -118,4 +115,3 @@ class Teacher extends BaseController
         }
     }
 }
- 
