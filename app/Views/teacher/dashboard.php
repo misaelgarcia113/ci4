@@ -12,13 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="app sidebar-mini">
- 
+
     <!-- Navbar -->
     <header class="app-header">
       <a class="app-header__logo" href="#">Profesor</a>
       <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <ul class="app-nav">
-        <!-- User Menu -->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
             <i class="bi bi-person fs-4"></i>
@@ -30,7 +29,7 @@
         </li>
       </ul>
     </header>
- 
+
     <!-- Sidebar -->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
@@ -50,7 +49,7 @@
         </li>
       </ul>
     </aside>
- 
+
     <!-- Contenido principal -->
     <main class="app-content">
       <div class="app-title">
@@ -64,7 +63,7 @@
           <li class="breadcrumb-item active">Dashboard</li>
         </ul>
       </div>
- 
+
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
@@ -107,7 +106,7 @@
           </div>
         </div>
       </div>
- 
+
       <!-- Historial de mensajes enviados -->
       <div class="row mt-3">
         <div class="col-md-12">
@@ -132,9 +131,9 @@
           </div>
         </div>
       </div>
- 
+
     </main>
- 
+
     <!-- Modal para enviar mensaje -->
     <div class="modal fade" id="modalMensaje" tabindex="-1" aria-labelledby="modalMensajeLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -160,23 +159,21 @@
         </div>
       </div>
     </div>
- 
+
     <!-- Scripts -->
     <script src="<?= base_url('/js/jquery-3.7.0.min.js'); ?>"></script>
     <script src="<?= base_url('/js/bootstrap.min.js'); ?>"></script>
     <script src="<?= base_url('/js/main.js'); ?>"></script>
     <script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- 
+
     <script>
       $(document).ready(function() {
- 
-        // Inicializar DataTable
+
         $('#tablaAlumnos').DataTable({
           language: { url: 'https://cdn.datatables.net/plug-ins/2.3.7/i18n/es-MX.json' }
         });
- 
-        // Abrir modal al dar clic en Mensaje
+
         $(document).on('click', '.btnEnviarMensaje', function() {
           const pk     = $(this).data('pk');
           const nombre = $(this).data('nombre');
@@ -185,20 +182,20 @@
           $('#textoMensaje').val('');
           $('#modalMensaje').modal('show');
         });
- 
-        // Enviar mensaje por Ajax
+
         $('#btnConfirmarMensaje').on('click', function() {
           const pk      = $('#pkEnrollmentModal').val();
           const mensaje = $('#textoMensaje').val().trim();
- 
+
           if (!mensaje) {
             Swal.fire('Error', 'Escribe un mensaje antes de enviar', 'warning');
             return;
           }
- 
+
           $.ajax({
             url: '<?= base_url('teacher/sendMessage') ?>',
             method: 'POST',
+            dataType: 'json',
             data: {
               pk_enrollment: pk,
               mensaje: mensaje
@@ -206,8 +203,7 @@
             success: function(res) {
               if (res.status === '200') {
                 $('#modalMensaje').modal('hide');
- 
-                // Agregar al historial de mensajes
+
                 const fila = `<tr>
                   <td>${res.fecha}</td>
                   <td>${res.hora}</td>
@@ -216,21 +212,21 @@
                   <td>${res.texto}</td>
                 </tr>`;
                 $('#bodyMensajes').prepend(fila);
- 
+
                 Swal.fire('Enviado', 'Mensaje enviado correctamente a Telegram', 'success');
               } else {
                 Swal.fire('Error', res.message, 'error');
               }
             },
-            error: function() {
+            error: function(xhr) {
+              console.log('Respuesta cruda:', xhr.responseText);
               Swal.fire('Error', 'No se pudo conectar con el servidor', 'error');
             }
           });
         });
- 
+
       });
     </script>
- 
+
   </body>
 </html>
- 
